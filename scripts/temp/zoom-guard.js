@@ -1,32 +1,32 @@
 export function initZoomGuard() {
-  ["gesturestart", "gesturechange", "gestureend"].forEach((type) => {
-    document.addEventListener(type, (e) => e.preventDefault(), {
-      passive: false,
-    });
-  });
+	["gesturestart", "gesturechange", "gestureend"].forEach((type) => {
+		document.addEventListener(type, (e) => e.preventDefault(), {
+			passive: false,
+		});
+	});
 
-  let lastTouchEnd = 0;
-  document.addEventListener(
-    "touchend",
-    (e) => {
-      const now = Date.now();
-      if (now - lastTouchEnd <= 300) e.preventDefault();
-      lastTouchEnd = now;
-    },
-    { passive: false },
-  );
+	let lastTouchEnd = 0;
+	document.addEventListener(
+		"touchend",
+		(e) => {
+			const now = Date.now();
+			if (now - lastTouchEnd <= 300) e.preventDefault();
+			lastTouchEnd = now;
+		},
+		{ passive: false },
+	);
 
-  document.addEventListener(
-    "wheel",
-    (e) => {
-      if (e.ctrlKey) e.preventDefault();
-    },
-    { passive: false },
-  );
+	document.addEventListener(
+		"wheel",
+		(e) => {
+			if (e.ctrlKey) e.preventDefault();
+		},
+		{ passive: false },
+	);
 
-  document.addEventListener("keydown", (e) => {
-    if ((e.ctrlKey || e.metaKey) && ["+", "-", "=", "0"].includes(e.key)) {
-      e.preventDefault();
-    }
-  });
+	document.addEventListener("keydown", (e) => {
+		if ((e.ctrlKey || e.metaKey) && ["+", "-", "=", "0"].includes(e.key)) {
+			e.preventDefault();
+		}
+	});
 }

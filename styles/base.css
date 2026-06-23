@@ -35,10 +35,8 @@ body::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: radial-gradient(
-        circle at 50% 40%,
-        rgba(133, 203, 51, 0.12),
-        transparent 55%
-    );
+    background: radial-gradient(circle at 50% 40%,
+            rgba(133, 203, 51, 0.12),
+            transparent 55%);
     pointer-events: none;
 }
