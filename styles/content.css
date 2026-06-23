@@ -1,0 +1,37 @@
+.stage {
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 9vw, 5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+h1 .green {
+    color: var(--green);
+}
+
+.tagline {
+    margin-top: 1.25rem;
+    font-size: clamp(1rem, 3.5vw, 1.25rem);
+    color: rgba(35, 31, 32, 0.6);
+    font-weight: 400;
+}
+
+.status {
+    margin-top: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.55rem 1.1rem;
+    border: 1px solid rgba(133, 203, 51, 0.35);
+    border-radius: 999px;
+    background: #ffffff;
+    font-size: 0.875rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--green);
+}
