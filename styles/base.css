@@ -18,8 +18,8 @@ body {
     background: #ffffff;
     color: var(--black);
     font-family:
-        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
-        sans-serif;
+        "LINE Seed Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
