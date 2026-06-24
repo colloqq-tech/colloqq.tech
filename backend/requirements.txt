@@ -1,4 +1,0 @@
-numpy>=2.0
-pillow>=11.0
-pypdfium2>=4.30
-pdftext>=0.6
