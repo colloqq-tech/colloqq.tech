@@ -72,6 +72,10 @@ export function initBackground(canvas) {
 					Math.sin(c * 0.35 + t) * 0.5 + Math.sin(r * 0.45 + t * 0.8) * 0.5;
 				let alpha = BASE + WAVE * (wave * 0.5 + 0.5);
 
+				let cr = GREEN[0] * alpha;
+				let cg = GREEN[1] * alpha;
+				let cb = GREEN[2] * alpha;
+
 				for (let i = 0; i < BLOBS.length; i++) {
 					const dx = x - bx[i];
 					const dy = y - by[i];
@@ -80,7 +84,14 @@ export function initBackground(canvas) {
 
 					if (dd < r2) {
 						const f = 1 - Math.sqrt(dd) / BLOB_RADIUS;
-						alpha += BLOB * f * f;
+						const contrib = BLOB * f * f;
+						const col = BLOBS[i].color || GREEN;
+
+						alpha += contrib;
+
+						cr += col[0] * contrib;
+						cg += col[1] * contrib;
+						cb += col[2] * contrib;
 					}
 				}
 
@@ -91,14 +102,25 @@ export function initBackground(canvas) {
 					const dist = Math.sqrt(dx * dx + dy * dy);
 
 					if (dist < POINTER_RADIUS) {
-						alpha += POINTER * (1 - dist / POINTER_RADIUS);
+						const contrib = POINTER * (1 - dist / POINTER_RADIUS);
+
+						alpha += contrib;
+
+						cr += GREEN[0] * contrib;
+						cg += GREEN[1] * contrib;
+						cb += GREEN[2] * contrib;
 					}
 				}
 
 				if (alpha < 0.012) continue;
+
+				const r8 = Math.round(cr / alpha);
+				const g8 = Math.round(cg / alpha);
+				const b8 = Math.round(cb / alpha);
+
 				if (alpha > 0.75) alpha = 0.75;
 
-				ctx.fillStyle = `rgba(${GREEN[0]}, ${GREEN[1]}, ${GREEN[2]}, ${alpha})`;
+				ctx.fillStyle = `rgba(${r8}, ${g8}, ${b8}, ${alpha})`;
 				ctx.fillRect(x, y, DOT, DOT);
 			}
 		}
