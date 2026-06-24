@@ -134,3 +134,7 @@ def main() -> None:
         logger.info("manifest: %s", args.json)
 
     logger.info("done: %d block(s) saved to %s/", len(manifest), args.out)
+
+
+if __name__ == "__main__":
+    main()
