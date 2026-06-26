@@ -1,6 +1,11 @@
 .env
 .DS_Store
 
+node_modules/
+dist/
+*.local
+*.tsbuildinfo
+
 __pycache__/
 *.pyc
 *.pyo
