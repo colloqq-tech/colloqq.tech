@@ -3,16 +3,25 @@ export type RGB = readonly [number, number, number];
 export const GREEN: RGB = [133, 203, 51];
 export const PINK: RGB = [231, 90, 124];
 
-export const CELL = 22;
-export const DOT = 3;
+export const CELL = 8;
+export const DOT = 2;
 export const BASE = 0.05;
-export const WAVE = 0.07;
+export const WAVE = 0.5;
 
 export const BLOB = 0.55;
-export const BLOB_RADIUS = 200;
+export const BLOB_RADIUS = 400;
 
-export const POINTER = 0.45;
-export const POINTER_RADIUS = 140;
+export const BLOB_MAG = 1;
+export const BLOB_REFRACT = 0.6;
+
+export const POINTER = 0.25;
+export const POINTER_RADIUS = 400;
+
+export const POINTER_MAG = 2;
+export const POINTER_REFRACT = 0.6;
+
+export const POINTER_FOLLOW = 6;
+export const POINTER_GROW = 4;
 
 export interface Blob {
     fx: number;
