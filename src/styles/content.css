@@ -3,6 +3,24 @@
     z-index: 1;
 }
 
+.stage::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(120vw, 900px);
+    height: min(80vh, 560px);
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 255, 0.92) 0%,
+        rgba(255, 255, 255, 0.78) 28%,
+        rgba(255, 255, 255, 0) 68%
+    );
+    z-index: -1;
+    pointer-events: none;
+}
+
 h1 {
     font-size: clamp(2.5rem, 9vw, 5rem);
     font-weight: 700;
