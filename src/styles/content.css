@@ -45,11 +45,11 @@ h1 .green {
     align-items: center;
     gap: 0.6rem;
     padding: 0.55rem 1.1rem;
-    border: 1px solid rgba(133, 203, 51, 0.35);
+    border: 1px solid rgba(32, 164, 243, 0.35);
     border-radius: 999px;
     background: #ffffff;
     font-size: 0.875rem;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: var(--green);
+    color: var(--blue);
 }
