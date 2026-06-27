@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+import React from "react";
 
 export function useZoomGuard(): void {
-    useEffect(() => {
+    React.useEffect(() => {
         const onGesture = (e: Event) => e.preventDefault();
         const gestureTypes = ["gesturestart", "gesturechange", "gestureend"];
         gestureTypes.forEach((type) =>

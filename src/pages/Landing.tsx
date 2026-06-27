@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 import Background from "../components/Background.tsx";
 import { useZoomGuard } from "../hooks/useZoomGuard.ts";
 
